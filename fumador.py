@@ -32,6 +32,30 @@ def agente():
         time.sleep(1)
 
 def fumador1():
+    #inicializamos un contador para saber cuantas veces ha fumado cada fumador
+    contador = 0
+    while True:
+        #Espera a que estén disponibles el tabaco, los filtros y la cerilla
+        print("Fumador 1 esperando por tabaco, filtros y cerilla")
+        tabaco_sem.acquire()
+        print("Fumador 1 adquirió tabaco")
+        filtros_sem.acquire()
+        print("Fumador 1 adquirió filtros")
+        cerilla_sem.acquire()
+        print("Fumador 1 adquirió cerilla")
+        print("Fumador 1 está fumando")
+        time.sleep(1)
+        #Devuelve los ingredientes al agente
+        print("Fumador 1 devuelve los ingredientes al agente")
+        tabaco_sem.release()
+        filtros_sem.release()
+        cerilla_sem.release()
+        #incrementamos el contador
+        contador += 1
+        print("Fumador 1 ha fumado ", contador, " veces")
+        
+
+
 
        
 
