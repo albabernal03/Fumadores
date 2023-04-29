@@ -31,6 +31,8 @@ def agente():
             tabaco_sem.release()
         time.sleep(1)
 
+def fumador1():
+
        
 
 
